@@ -29,7 +29,7 @@ namespace MyPayablesList_Stn
         {
             services.AddControllers();
             services.AddControllersWithViews();
-            services.AddDbContext<PayablesContext>(options =>
+            services.AddDbContext<PayablesAPIContext>(options =>
             options.UseNpgsql(Configuration["Data:APIConnection:PgConnectionString"]));
         }
 
