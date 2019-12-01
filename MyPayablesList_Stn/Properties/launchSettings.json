@@ -3,28 +3,28 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:52883",
-      "sslPort": 44378
-    }
+		"iisExpress": {
+			"applicationUrl": "http://localhost:52883",
+			"sslPort": 44378
+		}
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "organizacao",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "MyPayablesList_Stn": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }
+		"MyPayablesList_Stn": {
+			"commandName": "Project",
+			"launchBrowser": true,
+			"launchUrl": "organizacao",
+			"applicationUrl": "https://localhost:5001;http://localhost:5000",
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			}
+		}
   }
 }
