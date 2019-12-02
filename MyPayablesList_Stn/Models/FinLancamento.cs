@@ -20,4 +20,14 @@ namespace MyPayablesList_Stn.Models
         public DateTime? LanDataLancamento { get; set; }
         public Guid? LanPesPessoaId { get; set; }
     }
+
+    public partial class FinLancamentoQueryable
+    {
+        public DateTime? LanDataLancamento { get; set; }
+        public string OrgCategoria { get; set; }
+        public string LanFormaPagamento { get; set; }
+        public decimal? LanValorTotal { get; set; }
+        public string LanMoeda { get; set; }
+
+    }
 }

@@ -19,6 +19,8 @@ namespace MyPayablesList_Stn.Models
         public virtual DbSet<CadOrganizacao> CadOrganizacaoItens { get; set; }
         public virtual DbSet<CadPessoa> CadPessoaItens { get; set; }
         public virtual DbSet<FinLancamento> FinLancamentoItens { get; set; }
+        public virtual DbSet<FinLancamentoQueryable> FinLancamentoItensRetorno { get; set; }
+
 
         public IConfiguration Configuration { get; }
 
@@ -106,7 +108,7 @@ namespace MyPayablesList_Stn.Models
                     .HasColumnName("lan_moeda")
                     .HasMaxLength(3)
                     .IsFixedLength()
-                    .HasDefaultValueSql("'BRL'::character(1)");
+                    .HasDefaultValueSql("'BRL'::character(3)");
 
                 entity.Property(e => e.LanOrgOrganizacaoId).HasColumnName("lan_org_organizacao_id");
 
@@ -114,6 +116,36 @@ namespace MyPayablesList_Stn.Models
 
                 entity.Property(e => e.LanValorLancamento)
                     .HasColumnName("lan_valor_lancamento")
+                    .HasColumnType("numeric(12,4)")
+                    .HasDefaultValueSql("'0'::numeric");
+            });
+
+            modelBuilder.Entity<FinLancamentoQueryable>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.LanDataLancamento)
+                    .HasColumnName("lan_data_lancamento")
+                    .HasDefaultValueSql("('now'::text)::date");
+
+                entity.Property(e => e.OrgCategoria)
+                    .HasColumnName("org_categoria")
+                    .HasMaxLength(35)
+                    .HasDefaultValueSql("'Variados'::character varying");
+
+                entity.Property(e => e.LanFormaPagamento)
+                    .IsRequired()
+                    .HasColumnName("lan_forma_pagamento")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.LanMoeda)
+                    .HasColumnName("lan_moeda")
+                    .HasMaxLength(3)
+                    .IsFixedLength()
+                    .HasDefaultValueSql("'BRL'::character(3)");
+
+                entity.Property(e => e.LanValorTotal)
+                    .HasColumnName("lan_valor_total")
                     .HasColumnType("numeric(12,4)")
                     .HasDefaultValueSql("'0'::numeric");
             });
