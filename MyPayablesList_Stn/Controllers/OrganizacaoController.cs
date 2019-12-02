@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,7 @@ namespace MyPayablesList_Stn.Controllers
             return await _context.CadOrganizacaoItens.ToListAsync();
         }
 
+        [Consumes(MediaTypeNames.Application.Json)]
         [HttpPost]
         public async Task<ActionResult<CadOrganizacao>> PostOrgItem(CadOrganizacao organizacao)
         {
