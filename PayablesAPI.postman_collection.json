@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "df355a41-5aba-4bac-95b8-c873554d342e",
+		"name": "PayablesAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Estabelecimentos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"orgNome\": \"Pizza Alg\",\r\n        \"orgCategoria\": \"Alimentação\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44378/api/organizacao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"organizacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Estabelecimentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44378/api/organizacao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"organizacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Lançamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"lanOrgOrganizacaoId\": \"6bdef2d0-0fcc-46dc-814d-a556664d1311\",\r\n\t\"lanFormaPagamento\": \"Debito\",\r\n\t\"lanValorLancamento\": 20.12,\r\n\t\"lanDataLancamento\": \"2019-11-29\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44378/api/lancamento/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"lancamento",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Lançamento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44378/api/lancamento/grupo?dataInicio=2019-11-10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"lancamento",
+						"grupo"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2019-11-10"
+						},
+						{
+							"key": "dataFim",
+							"value": "2019-11-14",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7cdea2bc-e76a-4d04-9626-dcb9bd45a965",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2042e606-b774-4a49-af85-afd2540aee07",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
