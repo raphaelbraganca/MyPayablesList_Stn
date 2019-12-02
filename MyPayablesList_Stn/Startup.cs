@@ -12,8 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MyPayablesList_Stn.Models;
+using System.IO;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore;
 
 namespace MyPayablesList_Stn
 {
@@ -35,8 +35,11 @@ namespace MyPayablesList_Stn
             options.UseNpgsql(Configuration["Data:APIConnection:PgConnectionString"]));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Payables API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Payables API", Version = "v1", Description = "API para controle de Pagamentos." });
+                var xmlFile = Path.ChangeExtension(typeof(Startup).Assembly.Location, ".xml");
+                c.IncludeXmlComments(xmlFile);
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

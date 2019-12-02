@@ -12,6 +12,7 @@ namespace MyPayablesList_Stn.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class OrganizacaoController : ControllerBase
     {
 
@@ -22,12 +23,26 @@ namespace MyPayablesList_Stn.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Consultar estabelecimento 
+        /// </summary>
+        /// <returns>Retorna a linha recém criada</returns>
+        /// <response code="200">Retorna linhas caso encontrar</response>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CadOrganizacao>>> GetOrgItem()
         {
             return await _context.CadOrganizacaoItens.ToListAsync();
         }
 
+        /// <summary>
+        /// Cadastrar estabelecimento 
+        /// </summary>
+        /// <returns>Retorna a linha recém criada</returns>
+        /// <response code="201">Retorna a linha recém criada</response>
+        /// <response code="400">Caso algum parâmetro esteja faltando ou a forma de pagamento esteja fora de formatação</response> 
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Consumes(MediaTypeNames.Application.Json)]
         [HttpPost]
         public async Task<ActionResult<CadOrganizacao>> PostOrgItem(CadOrganizacao organizacao)
