@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyPayablesList_Stn</name>
+    </assembly>
+    <members>
+        <member name="M:MyPayablesList_Stn.Controllers.LancamentoController.GetLanItens">
+            <summary>
+            Consultar lançamentos 
+            </summary>
+            <response code="200">Retorna linhas caso encontrar</response>
+        </member>
+        <member name="M:MyPayablesList_Stn.Controllers.LancamentoController.PostLanItem(MyPayablesList_Stn.Models.FinLancamento)">
+             <summary>
+             Cadastrar lançamentos
+             </summary>
+             <remarks>
+             Modelo:
+            
+                 POST 
+                 {
+                    "lanOrgOrganizacaoId": "01ccbfdc-cbfc-45dc-8669-2dd5fbab3dfc",
+                    "lanFormaPagamento": "Debito",
+                    "lanValorLancamento": 20.12,
+                    "lanDataLancamento": "2019-11-29"
+                 }
+            
+             </remarks>
+             <returns>Retorna a linha recém criada</returns>
+             <response code="201">Retorna a linha recém criada</response>
+             <response code="400">Caso algum parâmetro esteja faltando ou a forma de pagamento esteja fora de formatação</response> 
+        </member>
+        <member name="M:MyPayablesList_Stn.Controllers.LancamentoController.GetLanItensCategoria(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+             <summary>
+             Consultar lançamentos filtrados por período e agrupados por Categoria 
+             </summary>
+             <remarks>
+             Modelo:
+                 
+                 dataInicio: AAAA-MM-DD
+                 dataFim: AAAA-MM-DD
+            
+             </remarks>
+             <response code="200">Retorna linhas caso encontrar</response>
+             <response code="404">Retorna caso não encontre nenhuma linha</response> 
+        </member>
+        <member name="M:MyPayablesList_Stn.Controllers.OrganizacaoController.GetOrgItem">
+            <summary>
+            Consultar estabelecimento 
+            </summary>
+            <returns>Retorna a linha recém criada</returns>
+            <response code="200">Retorna linhas caso encontrar</response>
+        </member>
+        <member name="M:MyPayablesList_Stn.Controllers.OrganizacaoController.PostOrgItem(MyPayablesList_Stn.Models.CadOrganizacao)">
+            <summary>
+            Cadastrar estabelecimento 
+            </summary>
+            <returns>Retorna a linha recém criada</returns>
+            <response code="201">Retorna a linha recém criada</response>
+            <response code="400">Caso algum parâmetro esteja faltando ou a forma de pagamento esteja fora de formatação</response> 
+        </member>
+    </members>
+</doc>
