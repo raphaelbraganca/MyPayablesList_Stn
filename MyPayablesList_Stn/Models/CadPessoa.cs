@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace MyPayablesList_Stn.Models
 {
+    #pragma warning disable CS1591
     public partial class CadPessoa
     {
         public Guid PesPessoaId { get; set; }

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyPayablesList_Stn.Models
 {
+    #pragma warning disable CS1591
     public partial class FinLancamento
     {
         public int LanLancamentoId { get; set; }

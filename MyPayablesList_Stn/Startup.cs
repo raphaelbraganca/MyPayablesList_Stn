@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 
 namespace MyPayablesList_Stn
 {
+    #pragma warning disable CS1591
     public class Startup
     {
         public Startup(IConfiguration configuration)

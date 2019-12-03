@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace MyPayablesList_Stn.Models
 {
+    #pragma warning disable CS1591
     public partial class PayablesAPIContext : DbContext
     {
         public PayablesAPIContext()

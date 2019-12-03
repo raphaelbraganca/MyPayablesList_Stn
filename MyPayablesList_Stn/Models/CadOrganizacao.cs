@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyPayablesList_Stn.Models
 {
+    #pragma warning disable CS1591
     public partial class CadOrganizacao
     {
         [Key]

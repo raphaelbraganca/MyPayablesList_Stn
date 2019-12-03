@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MyPayablesList_Stn.Controllers
 {
+    #pragma warning disable CS1591
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
