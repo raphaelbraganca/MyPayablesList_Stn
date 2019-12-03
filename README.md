@@ -6,7 +6,7 @@ Projeto de API para controle de pagamentos utilizando formatação Json como ret
 
 ### Clonar
 
-Clonar este reposiótio na máquina local utilizando:
+Clonar este repositório na máquina local utilizando:
 ```
 $ git clone https://github.com/raphaelbraganca/MyPayablesList_Stn.git
 ```
